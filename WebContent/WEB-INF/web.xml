@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+	 http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+   <welcome-file-list>
+		<welcome-file>/addPerson.html</welcome-file>
+	</welcome-file-list>
+	
+	<!-- 指定Spring配置文件位置，默认为/WEB-INF/applicationContext.xml -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+			classpath:applicationContext.xml
+		</param-value>
+	</context-param>
+
+	<!-- Spring配置文件加载类 -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<!-- Struts2的Filter，所有的请求都被映射到Struts2上 -->
+	<filter>
+		<filter-name>struts</filter-name>
+		<filter-class>
+			org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter
+		</filter-class>
+	</filter>
+
+	<!-- Struts2的Filter的URI配置 -->
+	<filter-mapping>
+		<filter-name>struts</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	
+</web-app>

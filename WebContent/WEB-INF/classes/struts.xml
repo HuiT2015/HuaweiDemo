@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.objectFactory" value="spring" />
+	
+	<constant name="struts.devMode" value="false" />
+	<package name="student" extends="struts-default">
+		<action name="stuAction" class="studentAction">
+			<result>/addPerson.html</result>
+			<result name="add">/addPerson.html</result>
+			<result name="list">/listPerson.jsp</result>
+		</action>
+	</package>
+</struts>
